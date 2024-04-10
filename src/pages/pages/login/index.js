@@ -58,6 +58,8 @@ const FormControlLabel = styled(MuiFormControlLabel)(({ theme }) => ({
 }))
 
 const LoginPage = () => {
+  const baseUrl = process.env.BASE_URL
+
   // ** State
   const [values, setValues] = useState({
     password: '',
@@ -90,7 +92,7 @@ const LoginPage = () => {
     e.preventDefault()
 
     try {
-      const response = await axios.post('http://localhost:8000/login', { email, password })
+      const response = await axios.post(`${baseUrl}/login`, { email, password })
       console.log('Login successful:', response.data)
 
       // Assuming the API response contains a token under `data.token`

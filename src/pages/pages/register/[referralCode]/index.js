@@ -108,13 +108,15 @@ const RegisterPage = () => {
       [name]: value
     }))
   }
+  const baseUrl = process.env.BASE_URL
+
   const handleSubmit = async e => {
     e.preventDefault()
 
     try {
       // Make an API call to your backend endpoint
 
-      const response = await axios.post('http://localhost:8000/register', formData)
+      const response = await axios.post(`${baseUrl}/register`, formData)
       console.log('formData', formData)
 
       // Handle success - maybe clear the form or redirect the user

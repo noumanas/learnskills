@@ -72,7 +72,8 @@ const RegisterPage = () => {
 
   // ** Hook
   const theme = useTheme()
-  console.log('id', id)
+  const baseUrl = process.env.BASE_URL
+
   const handleChange = prop => event => {
     setValues({ ...values, [prop]: event.target.value })
   }
@@ -117,7 +118,7 @@ const RegisterPage = () => {
     try {
       // Make an API call to your backend endpoint
 
-      const response = await axios.post('http://localhost:8000/register', formData)
+      const response = await axios.post(`${baseUrl}/register`, formData)
       console.log('formData', formData)
 
       // Handle success - maybe clear the form or redirect the user

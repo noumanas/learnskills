@@ -33,9 +33,11 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
 }))
 
 const UserDropdown = () => {
+  const baseUrl = process.env.BASE_URL
+
   const fetchUserInfo = async token => {
     // Replace with the actual API endpoint that verifies the token and returns user info
-    const response = await fetch('http://localhost:8000/user-info', {
+    const response = await fetch(`${baseUrl}/user-info`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}` // Assuming Bearer token authentication

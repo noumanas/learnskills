@@ -48,7 +48,7 @@ const AccountSettings = () => {
   const [userInfo, setuserInfo] = useState({})
   const [referralMember, setreferralMember] = useState({})
 
-  const baseUrl = 'http://localhost:8000'
+  const baseUrl = process.env.BASE_URL
 
   const handleChange = (event, newValue) => {
     setValue(newValue)

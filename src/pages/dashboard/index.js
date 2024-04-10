@@ -30,7 +30,7 @@ const Dashboard = () => {
   const [userInfo, setuserInfo] = useState({})
   const [referralMember, setreferralMember] = useState({})
   const [earnings, setEarnings] = useState({})
-  const baseUrl = 'http://localhost:8000'
+  const baseUrl = process.env.BASE_URL
   // const { id } = router.query
   // const navItems = navigation(id)
   const fetchUserInfo = async token => {
