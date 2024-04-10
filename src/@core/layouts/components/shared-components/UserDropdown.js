@@ -33,7 +33,7 @@ const BadgeContentSpan = styled('span')(({ theme }) => ({
 }))
 
 const UserDropdown = () => {
-  const baseUrl = process.env.BASE_URL
+  const baseUrl = 'http://143.198.64.42:9000'
 
   const fetchUserInfo = async token => {
     // Replace with the actual API endpoint that verifies the token and returns user info

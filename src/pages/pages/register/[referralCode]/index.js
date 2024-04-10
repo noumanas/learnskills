@@ -108,7 +108,7 @@ const RegisterPage = () => {
       [name]: value
     }))
   }
-  const baseUrl = process.env.BASE_URL
+  const baseUrl = 'http://143.198.64.42:9000'
 
   const handleSubmit = async e => {
     e.preventDefault()

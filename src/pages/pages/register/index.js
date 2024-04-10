@@ -72,7 +72,7 @@ const RegisterPage = () => {
 
   // ** Hook
   const theme = useTheme()
-  const baseUrl = process.env.BASE_URL
+  const baseUrl = 'http://143.198.64.42:9000'
 
   const handleChange = prop => event => {
     setValues({ ...values, [prop]: event.target.value })

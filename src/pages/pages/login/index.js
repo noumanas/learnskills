@@ -58,7 +58,7 @@ const FormControlLabel = styled(MuiFormControlLabel)(({ theme }) => ({
 }))
 
 const LoginPage = () => {
-  const baseUrl = process.env.BASE_URL
+  const baseUrl = 'http://143.198.64.42:9000'
 
   // ** State
   const [values, setValues] = useState({
