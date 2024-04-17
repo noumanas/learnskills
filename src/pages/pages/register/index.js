@@ -37,6 +37,7 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 // ** Demo Imports
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustration'
 import { useRouter } from 'next/router'
+import { toast } from 'react-hot-toast'
 
 // ** Ensure there's an empty line before this comment
 
@@ -122,10 +123,13 @@ const RegisterPage = () => {
       console.log('formData', formData)
 
       // Handle success - maybe clear the form or redirect the user
-      console.log('User registered:', response)
+      toast.success('Registration Completed:')
+
       setFormErrors({}) // Clear all errors
       window.location.href = '/pages/login/'
     } catch (error) {
+      toast.error(error.response.data)
+
       // Initialize an empty object to hold the parsed errors
       const parsedErrors = {}
 
@@ -329,7 +333,7 @@ const RegisterPage = () => {
               label='Enter Referral code'
               name='referralCode'
               sx={{ marginBottom: 4 }}
-              value={formData.referralCode} // Bind the state value
+              value={referralCode || formData.referralCode} // Bind the state value
               onChange={handleInputChange}
             />
             <FormControl fullWidth sx={{ marginBottom: 4 }}>

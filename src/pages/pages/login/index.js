@@ -39,6 +39,9 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 // ** Demo Imports
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustration'
 import axios from 'axios'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 // ** Styled Components
 const Card = styled(MuiCard)(({ theme }) => ({
   [theme.breakpoints.up('sm')]: { width: '28rem' }
@@ -71,7 +74,7 @@ const LoginPage = () => {
   // ** Hook
   const theme = useTheme()
   const router = useRouter()
-
+  const [loginError, setLoginError] = useState('')
   const handleInputChange = event => {
     const { name, value } = event.target
 
@@ -94,8 +97,9 @@ const LoginPage = () => {
     try {
       const response = await axios.post(`${baseUrl}/login`, { email, password })
       console.log('Login successful:', response.data)
-
       // Assuming the API response contains a token under `data.token`
+      toast.success('Login successful!')
+
       const { token } = response.data
 
       // Save the token to localStorage
@@ -104,7 +108,7 @@ const LoginPage = () => {
       // Redirect to the dashboard page
       router.push('/dashboard') // For Next.js, for React Router, use `history.push('/dashboard');`
     } catch (error) {
-      console.error('Error logging in:', error.response ? error.response.data : error)
+      setLoginError(error.response.data.error)
     }
   }
 
@@ -225,6 +229,7 @@ const LoginPage = () => {
                 }
               />
             </FormControl>
+            {loginError && <Box sx={{ color: 'red' }}>{loginError}</Box>}
             <Box
               sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
             >
