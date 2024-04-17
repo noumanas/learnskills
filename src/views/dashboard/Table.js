@@ -122,7 +122,16 @@ const DashboardTable = referralMember => {
                   </TableCell>
                   <TableCell>{member.mobileNumber}</TableCell>
                   <TableCell>{member.state}</TableCell>
-                  <TableCell>{member.packageId}</TableCell>
+                  <TableCell>
+                    {' '}
+                    {member.packageId == 1
+                      ? 'Basic'
+                      : member.packageId == 2
+                      ? 'Standard'
+                      : member.packageId == 3
+                      ? 'Premium'
+                      : null}
+                  </TableCell>
                   <TableCell>
                     Rs{' '}
                     {member.packageId == 1 ? 1550 : member.packageId == 2 ? 2550 : member.packageId == 3 ? 5560 : null}
