@@ -124,6 +124,10 @@ const DashboardTable = referralMember => {
                   <TableCell>{member.state}</TableCell>
                   <TableCell>{member.packageId}</TableCell>
                   <TableCell>
+                    Rs{' '}
+                    {member.packageId == 1 ? 1550 : member.packageId == 2 ? 2550 : member.packageId == 3 ? 5560 : null}
+                  </TableCell>
+                  <TableCell>
                     <Chip
                       label={member.status}
                       color={statusObj[member.status]?.color || 'default'}

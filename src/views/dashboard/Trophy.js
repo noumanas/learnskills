@@ -41,7 +41,10 @@ const Trophy = props => {
           <TextField fullWidth value={'http://learnskills.pro/pages/register/' + userInfo?.yourReferralCode} />
         </Typography>
         <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
-          Rs {earnings?.todayEarnings || 0}
+          Balance : Rs {earnings?.balance || 0}
+        </Typography>
+        <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
+          Total Earnings : Rs {earnings?.todayEarnings || 0}
         </Typography>
         <Button size='small' variant='contained'>
           View Sales
