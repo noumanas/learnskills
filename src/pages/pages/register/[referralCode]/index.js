@@ -89,7 +89,7 @@ const RegisterPage = () => {
     email: '',
     mobileNumber: '',
     password: '',
-    referralCode: referralCode,
+    referralCode,
     state: '',
     packageId: '',
     couponCode: '',
@@ -327,7 +327,7 @@ const RegisterPage = () => {
               label='Enter Referral code'
               name='referralCode'
               sx={{ marginBottom: 4 }}
-              value={formData.referralCode || referralCode} // Bind the state value
+              value={referralCode || formData.referralCode} // Bind the state value
               onChange={handleInputChange}
             />
             <FormControl fullWidth sx={{ marginBottom: 4 }}>
