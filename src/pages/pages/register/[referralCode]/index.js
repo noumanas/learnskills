@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, Fragment } from 'react'
+import { useState, Fragment, useEffect } from 'react'
 // ** Next Imports
 import Link from 'next/link'
 
@@ -95,6 +95,16 @@ const RegisterPage = () => {
     couponCode: '',
     transactionId: ''
   })
+  // Extract referral code from URL params
+  useEffect(() => {
+    const { referralCode } = router.query
+    if (referralCode) {
+      setFormData(prevFormData => ({
+        ...prevFormData,
+        referralCode: referralCode
+      }))
+    }
+  }, [router.query.referralCode])
   // Handles form field changes
   const handleInputChange = e => {
     const { name, value } = e.target
