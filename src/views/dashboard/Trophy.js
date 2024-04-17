@@ -15,12 +15,18 @@ const TriangleImg = styled('img')({
 })
 
 // Styled component for the trophy image
-const TrophyImg = styled('img')({
-  right: 36,
+const TrophyImg = styled('img')(({ theme }) => ({
+  position: 'absolute',
   bottom: 20,
+  right: 36,
   height: 98,
-  position: 'absolute'
-})
+  [theme.breakpoints.down('sm')]: {
+    // Adjust properties for small screens (e.g., mobile devices)
+    height: 64,
+    right: 16,
+    bottom: 16
+  }
+}))
 
 const Trophy = props => {
   // ** Hook

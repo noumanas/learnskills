@@ -94,7 +94,6 @@ const statusObj = {
 }
 
 const DashboardTable = referralMember => {
-  console.log(referralMember.referralMember.length)
   if (!Array.isArray(referralMember.referralMember)) {
     return <div>No referral members found.</div>
   }
