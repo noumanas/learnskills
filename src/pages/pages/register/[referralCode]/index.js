@@ -359,7 +359,7 @@ const RegisterPage = () => {
                 onChange={handleInputChange}
                 label='Choose Package'
               >
-                <MenuItem value='1'>Package Basic Rs 1450</MenuItem>
+                <MenuItem value='1'>Package Basic Rs 1550</MenuItem>
                 <MenuItem value='2'>Package Standard Rs 2550</MenuItem>
                 <MenuItem value='3'>Package Premium Rs 5560</MenuItem>
                 {/* Add more MenuItem components for additional packages */}
