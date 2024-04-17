@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <div className='bg-[#0f2152]'>
-          <RapidDigtal />
-        </div>
+        <div className='bg-[#0f2152]'>Coming Soon this Pages</div>
       </div>
     </>
   )

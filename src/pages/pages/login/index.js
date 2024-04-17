@@ -68,6 +68,8 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [errorText, SeterrorText] = useState('')
+
   // ** Hook
   const theme = useTheme()
   const router = useRouter()
@@ -104,7 +106,7 @@ const LoginPage = () => {
       // Redirect to the dashboard page
       router.push('/dashboard') // For Next.js, for React Router, use `history.push('/dashboard');`
     } catch (error) {
-      console.error('Error logging in:', error.response ? error.response.data : error)
+      SeterrorText(error.response.data.error)
     }
   }
 
@@ -225,6 +227,8 @@ const LoginPage = () => {
                 }
               />
             </FormControl>
+            {errorText && <Box sx={{ color: 'red' }}>{errorText}</Box>}
+
             <Box
               sx={{ mb: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'space-between' }}
             >
