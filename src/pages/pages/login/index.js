@@ -58,7 +58,7 @@ const FormControlLabel = styled(MuiFormControlLabel)(({ theme }) => ({
 }))
 
 const LoginPage = () => {
-  const baseUrl = 'http://143.198.64.42:9000'
+  const baseUrl = 'https://starfish-app-7c9pu.ondigitalocean.app'
 
   // ** State
   const [values, setValues] = useState({

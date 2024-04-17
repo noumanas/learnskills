@@ -30,7 +30,7 @@ const Dashboard = () => {
   const [userInfo, setuserInfo] = useState({})
   const [referralMember, setreferralMember] = useState({})
   const [earnings, setEarnings] = useState({})
-  const baseUrl = 'http://143.198.64.42:9000'
+  const baseUrl = 'https://starfish-app-7c9pu.ondigitalocean.app'
   // const { id } = router.query
   // const navItems = navigation(id)
   const fetchUserInfo = async token => {
