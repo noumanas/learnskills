@@ -35,7 +35,18 @@ const Trophy = props => {
           Congratulations{' '}
           {userInfo?.firstName ? userInfo.firstName.charAt(0).toUpperCase() + userInfo.firstName.slice(1) : ''}! 🥳
         </Typography>
-
+        <Typography variant='h6'>
+          Member{' '}
+          <Button size='small' variant='contained'>
+            {userInfo?.packageId == 1
+              ? 'Basic'
+              : userInfo?.packageId == 2
+              ? 'Standard'
+              : userInfo?.packageId == 3
+              ? 'Premium'
+              : null}
+          </Button>
+        </Typography>
         <Typography variant='body2' sx={{ letterSpacing: '0.25px' }}>
           Referral Link
           <TextField fullWidth value={'http://learnskills.pro/pages/register/' + userInfo?.yourReferralCode} />
