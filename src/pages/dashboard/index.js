@@ -13,6 +13,8 @@ import CardStatisticsVerticalComponent from 'src/@core/components/card-statistic
 
 // ** Styled Component Import
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
+import VerticalLayout from 'src/@core/layouts/VerticalLayout'
+import VerticalAppBarContent from 'src/layouts/components/vertical/AppBarContent'
 
 // ** Demo Components Imports
 import Table from 'src/views/dashboard/Table'
