@@ -26,7 +26,7 @@ export function DigitalTreansormation() {
 
         <div className='grid md:grid-cols-3 lg:grid-cols-5 gap-5 '>
           <div className='mb-4 pt-20 text-center'>
-            <Image src={Logo} height={37} width={219} alt={''} className='h-9 w-[219px] mx-auto md:mx-0' />
+            {/* <Image src={Logo} height={37} width={219} alt={''} className='h-9 w-[219px] mx-auto md:mx-0' /> */}
 
             <p className='mt-4 text-lg text-center px-12	'>
               Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur
