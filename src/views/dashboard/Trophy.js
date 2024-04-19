@@ -54,7 +54,7 @@ const Trophy = props => {
           </Button>
         </Typography>
         <Typography variant='body2' sx={{ letterSpacing: '0.25px' }}>
-          Referral Link
+          Affiliate Link
           <TextField fullWidth value={'http://learnskills.pro/pages/register/' + userInfo?.yourReferralCode} />
         </Typography>
         <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
