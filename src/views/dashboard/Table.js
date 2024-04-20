@@ -104,8 +104,8 @@ const DashboardTable = referralMember => {
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Date</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>State</TableCell>
               <TableCell>Package</TableCell>
               <TableCell>Earning</TableCell>
               <TableCell>Status</TableCell>
