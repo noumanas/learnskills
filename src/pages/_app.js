@@ -1,7 +1,7 @@
 // ** Next Imports
 import Head from 'next/head'
 import { Router } from 'next/router'
-
+import Script from 'next/script'
 // ** Loader Import
 import NProgress from 'nprogress'
 
@@ -52,6 +52,13 @@ const App = props => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-FEK7GDD0FH'></script>
+        <Script id='google-analytics'>
+          {` window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-FEK7GDD0FH');`}
+        </Script>
         <title>{`${themeConfig.templateName} - Learn Skills Pro Most Benefit for Earning Plaform `}</title>
         <meta
           name='description'

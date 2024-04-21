@@ -1,7 +1,6 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
-
 // ** Layout Imports
 // !Do not remove this Layout import
 import VerticalLayout from 'src/@core/layouts/VerticalLayout'

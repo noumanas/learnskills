@@ -30,10 +30,19 @@ const TrophyImg = styled('img')(({ theme }) => ({
 
 const Trophy = props => {
   // ** Hook
+
   const earnings = props.earnings
   const userInfo = props.userInfo
   const theme = useTheme()
   const imageSrc = theme.palette.mode === 'light' ? 'triangle-light.png' : 'triangle-dark.png'
+  const formattedEarnings = new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'PKR'
+  }).format(earnings?.todayEarnings || 0)
+  const balance = new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'PKR'
+  }).format(earnings?.balance || 0)
   return (
     <Card sx={{ position: 'relative' }}>
       <CardContent>
@@ -58,16 +67,16 @@ const Trophy = props => {
           <TextField fullWidth value={'http://learnskills.pro/pages/register/' + userInfo?.yourReferralCode} />
         </Typography>
         <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
-          Balance : Rs {earnings?.balance || 0}
+          Balance : {balance}
         </Typography>
         <Typography variant='h5' sx={{ my: 4, color: 'primary.main' }}>
-          Total Earnings : Rs {earnings?.todayEarnings || 0}
+          Total Earnings : {formattedEarnings}
         </Typography>
         <Button size='small' variant='contained'>
           View Sales
         </Button>
         <TriangleImg alt='triangle background' src={`/images/misc/${imageSrc}`} />
-        <TrophyImg alt='trophy' src='/images/misc/trophy.png' />
+        {/* <TrophyImg alt='trophy' src='/images/misc/trophy.png' /> */}
       </CardContent>
     </Card>
   )
