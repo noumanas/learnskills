@@ -52,13 +52,20 @@ const App = props => {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        {/* Google Analytics script */}
         <script async src='https://www.googletagmanager.com/gtag/js?id=G-FEK7GDD0FH'></script>
-        <Script id='google-analytics'>
-          {` window.dataLayer = window.dataLayer || [];
+        {/* Google Analytics initialization script */}
+        <script
+          id='google-analytics'
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-FEK7GDD0FH');`}
-        </Script>
+                gtag('config', 'G-FEK7GDD0FH');
+              `
+          }}
+        />
         <title>{`${themeConfig.templateName} - Learn Skills Pro Most Benefit for Earning Plaform `}</title>
         <meta
           name='description'
