@@ -395,8 +395,8 @@ const RegisterPage = () => {
                     <strong>Note:</strong> <br />
                     * Agar ap k pass referral link ya code dene wala koi nahi hai to payment na karein. <br />
                     * Kisi aise bandy ko talash kariye jis ka referral code use kar k ap account bana saky. <br />* Fees
-                    pay karny k bad screenshot us bandy ko bhejiye jis ny apko skillsider ki details di hein. <br />*
-                    Nichy diye huy numbers k ilawa kisi or number py payment na karein.
+                    pay karny k bad screenshot us bandy ko bhejiye jis ny apko Learnskills.pro ki details di hein.{' '}
+                    <br />* Nichy diye huy numbers k ilawa kisi or number py payment na karein.
                   </p>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
@@ -425,6 +425,12 @@ const RegisterPage = () => {
                         <td>UBL</td>
                         <td>Muhammad Noman</td>
                         <td>0047245888973</td>
+                      </tr>
+                      <tr>
+                        {/* <td>Logo</td> */}
+                        <td>NayaPay</td>
+                        <td>Muhammad Noman</td>
+                        <td>03443627887</td>
                       </tr>
                     </tbody>
                   </table>
