@@ -71,6 +71,7 @@ const App = props => {
           name='description'
           content={`${themeConfig.templateName} –Learn Skills Pro Most Benefit for Earning Plaform  – is the most developer friendly & highly customizableLearn Skills Pro Most Benefit for Earning Plaform .`}
         />
+        <meta name='google-adsense-account' content='ca-pub-9547251569083615'></meta>
         <meta name='keywords' content='Learn Skills Pro Most Benefit for Earning Plaform ' />
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
