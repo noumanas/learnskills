@@ -66,6 +66,11 @@ const App = props => {
               `
           }}
         />
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9547251569083615'
+          crossorigin='anonymous'
+        ></script>
         <title>{`${themeConfig.templateName} - Learn Skills Pro Most Benefit for Earning Plaform `}</title>
         <meta
           name='description'
