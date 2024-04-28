@@ -59,7 +59,7 @@ const navigation = () => {
     {
       title: 'Course',
       icon: CreditCardOutline,
-      path: '/cards'
+      path: '/course'
     }
     // {
     //   title: 'Tables',
