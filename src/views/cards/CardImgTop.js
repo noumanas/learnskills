@@ -50,9 +50,9 @@ const CardImgTop = () => {
             padding: '20px'
           }}
         >
-          <div style={{ maxWidth: '600px', textAlign: 'left', backgroundColor: '#FFF', padding: '20px' }}>
+          <div style={{ maxWidth: '100%', textAlign: 'left', backgroundColor: '#FFF', padding: '20px' }}>
             <iframe
-              width='560'
+              width='400'
               height='315'
               src='https://www.youtube.com/embed/OV6oTMD6pUo?si=ggI4TZaDYpxu5Umv'
               title='YouTube video player'
@@ -60,6 +60,7 @@ const CardImgTop = () => {
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
               referrerpolicy='strict-origin-when-cross-origin'
               allowfullscreen
+              className='lg:w-[800px] w-[400px] lg:h-[400px]'
             ></iframe>
 
             <Button onClick={handleCloseModal} style={{ marginTop: '20px' }}>
