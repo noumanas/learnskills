@@ -54,7 +54,7 @@ const CardImgTop = () => {
             <iframe
               width='400'
               height='315'
-              src='https://www.youtube.com/embed/OV6oTMD6pUo?si=ggI4TZaDYpxu5Umv'
+              src='https://www.youtube.com/embed/QsLKMg9smC8?si=SSgGZXGSjgxlaYkz'
               title='YouTube video player'
               frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
@@ -62,7 +62,6 @@ const CardImgTop = () => {
               allowfullscreen
               className='lg:w-[800px] w-[400px] lg:h-[400px]'
             ></iframe>
-
             <Button onClick={handleCloseModal} style={{ marginTop: '20px' }}>
               Close Modal
             </Button>
