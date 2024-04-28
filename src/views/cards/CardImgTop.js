@@ -20,7 +20,11 @@ const CardImgTop = () => {
   }
   return (
     <Card>
-      <CardMedia sx={{ height: '14.5625rem' }} image='/images/cards/Affiliate-Marketing-BCG-Banner-fixed.png' />
+      <CardMedia
+        sx={{ height: '14.5625rem' }}
+        image='/images/cards/Affiliate-Marketing-BCG-Banner-fixed.png'
+        onClick={handleOpenModal}
+      />
       <CardContent>
         <Typography variant='h6' sx={{ marginBottom: 2 }} onClick={handleOpenModal}>
           Affiliate Marketing Course
