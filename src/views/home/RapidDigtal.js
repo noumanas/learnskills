@@ -2,6 +2,7 @@ import rightArrow from '../../../public/images/pages/rightArrow.png'
 import Image from 'next/image'
 import Imagecontainer2 from '../../../public/images/pages/Imagecontainer2.png'
 import strokeline from '../../../public/images/pages/strokeline.png'
+import Link from 'next/link'
 
 export function RapidDigtal() {
   return (
@@ -22,10 +23,12 @@ export function RapidDigtal() {
             the Middle East. Collaborating seamlessly with both Government and Private Sector organizations, we bring
             innovation, talent and reliability to the forefront.
           </p> */}
-          <button className='mt-10 bg-[ABE03C] flex font-medium bg-[#ABE03C] h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356]'>
-            Explore our services
-            <Image src={rightArrow} className='ml-2' alt='rightArrow' />
-          </button>
+          <Link href='/pages/login' passHref>
+            <button className='mt-10 bg-[ABE03C] flex font-medium bg-[#ABE03C] h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356]'>
+              Explore our services
+              <Image src={rightArrow} className='ml-2' alt='rightArrow' />
+            </button>
+          </Link>
         </div>
 
         <Image src={Imagecontainer2} alt='container' width={700} height={549} className=' lg:block mb-40 mt-20' />

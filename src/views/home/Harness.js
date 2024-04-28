@@ -2,6 +2,7 @@ import rightArrowWhite from '../../../public/images/pages/rightArrowWhite.png'
 import Image from 'next/image'
 import harnessContainer from '../../../public/images/pages/harnessContainer.png'
 import Imagecontainer2 from '../../../public/images/pages/Imagecontainer2.png'
+import Link from 'next/link'
 import strokeline from '../../../public/images/pages/strokeline.png'
 
 export function Harness() {
@@ -17,10 +18,12 @@ export function Harness() {
             Our strength lies in crafting bespoke transformation solutions tailored to your organization&apos;s distinct
             needs, ensuring a seamless and effective journey towards digital excellence.
           </p>
-          <button className='mt-10 bg-[#102356] flex font-medium h-[60px] w-[228px] items-center justify-center rounded-lg text-[#FFFFFF]'>
-            Get Started
-            <Image src={rightArrowWhite} className='ml-2' height={14} width={14} alt='rightArrow' />
-          </button>
+          <Link href='/pages/login' passHref>
+            <button className='mt-10 bg-[#102356] flex font-medium h-[60px] w-[228px] items-center justify-center rounded-lg text-[#FFFFFF]'>
+              Get Started
+              <Image src={rightArrowWhite} className='ml-2' height={14} width={14} alt='rightArrow' />
+            </button>
+          </Link>
         </div>
 
         {/* <Image src={Imagecontainer} alt="container" className="mt-40 mb-40 lg:hidden"/> */}

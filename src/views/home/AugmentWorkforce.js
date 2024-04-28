@@ -2,6 +2,7 @@ import rightArrow from '../../../public/images/pages/rightArrow.png'
 import Image from 'next/image'
 import Workforce from '../../../public/images/pages/Workforce.png'
 import strokeline from '../../../public/images/pages/strokeline.png'
+import Link from 'next/link'
 
 export function AugmentWorkforce() {
   return (
@@ -18,10 +19,12 @@ export function AugmentWorkforce() {
             deploy skilled Digital Transformation resources, on-site and remotely, at lightning speed.{' '}
           </p>
           <p className='font-bold text-[#ffffff] text-[12px] mt-[1px]'>Let us fulfill your talent needs.</p>
-          <button className='mt-10 bg-[#ABE03C] flex font-medium h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356]'>
-            Inquire Now
-            <Image src={rightArrow} className='ml-2' height={14} width={14} alt='rightArrow' />
-          </button>
+          <Link href='/pages/login' passHref>
+            <button className='mt-10 bg-[#ABE03C] flex font-medium h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356]'>
+              Inquire Now
+              <Image src={rightArrow} className='ml-2' height={14} width={14} alt='rightArrow' />
+            </button>
+          </Link>
         </div>
 
         {/* <Image src={Imagecontainer} alt='container' className='mt-40 mb-40 lg:hidden' /> */}

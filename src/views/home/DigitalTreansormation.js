@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Logo from '../../../public/images/pages/Logo.png'
 import rightArrow from '../../../public/images/pages/rightArrow.png'
 // import footerbackground from '../../../public/images/pages/footerbackground.png'
+import Link from 'next/link'
 
 export function DigitalTreansormation() {
   return (
@@ -17,11 +18,12 @@ export function DigitalTreansormation() {
             EnDemand IT is not just a service provider; we are your partners in fast-track digital transformation.
             Explore the possibilities, elevate your IT capabilities, and embrace the future with confidence.
           </p>
-
-          <button className='mt-10 bg-[#ABE03C] flex justify-center items-center font-medium h-15  mx-auto rounded-lg text-[#102356] h-[59px] w-[243px]'>
-            Contact Us Today
-            <Image src={rightArrow} className='ml-2 h-3.5 w-3.5' height={14} width={14} alt='rightArrow' />
-          </button>
+          <Link href='/pages/login' passHref>
+            <button className='mt-10 bg-[#ABE03C] flex justify-center items-center font-medium h-15  mx-auto rounded-lg text-[#102356] h-[59px] w-[243px]'>
+              Contact Us Today
+              <Image src={rightArrow} className='ml-2 h-3.5 w-3.5' height={14} width={14} alt='rightArrow' />
+            </button>
+          </Link>
         </div>
 
         <div className='grid md:grid-cols-3 lg:grid-cols-5 gap-5 '>
