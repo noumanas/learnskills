@@ -54,7 +54,7 @@ const CardImgTop = () => {
             <iframe
               width='400'
               height='315'
-              src='https://www.youtube.com/embed/QsLKMg9smC8?si=SSgGZXGSjgxlaYkz'
+              src='https://www.youtube.com/embed/videoseries?si=FNdfDlIRyrOeZayP&amp;list=PLVlTxjz_tzOkso5AaO0sLyr1u-4LUK_aG'
               title='YouTube video player'
               frameborder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
