@@ -55,7 +55,7 @@ export function ComperehansiveOffers() {
             </p>
             <p className='px-10 py-10 font-bold text-[30px] text-[#102356] group-hover:text-white '>Rs {item.price}</p>
             <Link href='/pages/register' passHref>
-              <button className='bg-[ABE03C] flex font-medium bg-[#ABE03C] h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356] cursor-pointer ml-10 hover:text-[#FFF]'>
+              <button className='bg-[ABE03C] flex font-medium bg-[#ABE03C] h-[60px] w-[228px] items-center justify-center rounded-lg text-[#102356] cursor-pointer lg:ml-10 hover:text-[#FFF] min-[430px]:m-5 min-[390px]:m-5'>
                 Get Started
               </button>
             </Link>
