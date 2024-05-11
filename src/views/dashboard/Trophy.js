@@ -8,7 +8,8 @@ import TextField from '@mui/material/TextField'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 // Styled component for the triangle shaped background image
 const TriangleImg = styled('img')({
@@ -34,9 +35,12 @@ const TrophyImg = styled('img')(({ theme }) => ({
 
 const Trophy = props => {
   // ** Hook
+  const baseUrl = 'https://starfish-app-7c9pu.ondigitalocean.app'
   const [selectedFile, setSelectedFile] = useState(null)
-  const currentImage = '/static/images/avatar/3.jpg'
+  const currentImage = `https://starfish-app-7c9pu.ondigitalocean.app/public/uploads${props.userInfo?.profile}`
   const [avatarImage, setAvatarImage] = useState(currentImage)
+  const [gettoken, setToken] = useState('')
+
   const handleImageChange = event => {
     setSelectedFile(event.target.files[0])
     const newImage = event.target.files[0]
@@ -47,16 +51,23 @@ const Trophy = props => {
         setAvatarImage(reader.result)
       }
       reader.readAsDataURL(newImage)
+      handleSubmit()
     }
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    setToken(token)
+  }, [])
   const handleSubmit = async () => {
     const formData = new FormData()
     formData.append('image', selectedFile)
 
     try {
-      const response = await axios.post('/api/profile/image', formData, {
+      const response = await axios.post(`${baseUrl}/user-info-updates`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
+          Authorization: `Bearer ${gettoken}`
         }
       })
       console.log('Image uploaded successfully:', response.data)
@@ -92,7 +103,11 @@ const Trophy = props => {
               <PhotoCameraIcon />
             </IconButton>
           </label>
-          <Avatar alt={userInfo.firstName.charAt(0).toUpperCase()} src={avatarImage} sx={{ width: 100, height: 100 }} />
+          <Avatar
+            alt={userInfo?.firstName?.charAt(0).toUpperCase()}
+            src={avatarImage}
+            sx={{ width: 100, height: 100 }}
+          />
         </div>
         {/* <Typography variant='h6'>
           Congratulations{' '}
