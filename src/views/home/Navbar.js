@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Logo from '../../../public/images/pages/Logo.png'
+import Logo from '../../../public/images/pages/learnskill_logo.png'
 import Btn from '../../../public/images/pages/Btn.png'
 import rightArrow from '../../../public/images/pages/rightArrow.png'
 import Link from 'next/link'
@@ -17,8 +17,8 @@ export function Navbar() {
   return (
     <nav className='bg-[#0f2152] flex w-full items-center justify-between px-[20px] py-[16px]  lg:mx-auto lg:px-20'>
       <div>
-        <h1 className='font-extrabold text-[26px] font-Inter text-[#ffffff] lg:text-[32px]'>Learn Skills</h1>
-        {/* <Image src={Logo} alt='Logo' height={37} width={223} /> */}
+        {/* <h1 className='font-extrabold text-[26px] font-Inter text-[#ffffff] lg:text-[32px]'>Learn Skills</h1> */}
+        <Image src={Logo} alt='Logo' height={37} width={223} />
       </div>
       <div>
         <div className='hidden lg:flex pl-[74px] gap-x-[56px] items-center justify-center'>

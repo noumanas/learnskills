@@ -5,6 +5,10 @@ import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
 import { styled, useTheme } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
+import Avatar from '@mui/material/Avatar'
+import IconButton from '@mui/material/IconButton'
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera'
+import React, { useState } from 'react'
 
 // Styled component for the triangle shaped background image
 const TriangleImg = styled('img')({
@@ -30,7 +34,36 @@ const TrophyImg = styled('img')(({ theme }) => ({
 
 const Trophy = props => {
   // ** Hook
+  const [selectedFile, setSelectedFile] = useState(null)
+  const currentImage = '/static/images/avatar/3.jpg'
+  const [avatarImage, setAvatarImage] = useState(currentImage)
+  const handleImageChange = event => {
+    setSelectedFile(event.target.files[0])
+    const newImage = event.target.files[0]
+    // Update the avatar image
+    if (newImage) {
+      const reader = new FileReader()
+      reader.onload = () => {
+        setAvatarImage(reader.result)
+      }
+      reader.readAsDataURL(newImage)
+    }
+  }
+  const handleSubmit = async () => {
+    const formData = new FormData()
+    formData.append('image', selectedFile)
 
+    try {
+      const response = await axios.post('/api/profile/image', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      console.log('Image uploaded successfully:', response.data)
+    } catch (error) {
+      console.error('Error uploading image:', error)
+    }
+  }
   const earnings = props.earnings
   const userInfo = props.userInfo
   const theme = useTheme()
@@ -46,12 +79,27 @@ const Trophy = props => {
   return (
     <Card sx={{ position: 'relative' }}>
       <CardContent>
-        <Typography variant='h6'>
+        <div>
+          <input
+            accept='image/*'
+            id='avatar-input'
+            type='file'
+            style={{ display: 'none' }}
+            onChange={handleImageChange}
+          />
+          <label htmlFor='avatar-input'>
+            <IconButton color='primary' component='span'>
+              <PhotoCameraIcon />
+            </IconButton>
+          </label>
+          <Avatar alt={userInfo.firstName.charAt(0).toUpperCase()} src={avatarImage} sx={{ width: 100, height: 100 }} />
+        </div>
+        {/* <Typography variant='h6'>
           Congratulations{' '}
           {userInfo?.firstName ? userInfo.firstName.charAt(0).toUpperCase() + userInfo.firstName.slice(1) : ''}! 🥳
-        </Typography>
+        </Typography> */}
         <Typography variant='h6'>
-          Member{' '}
+          {userInfo?.firstName ? userInfo.firstName.charAt(0).toUpperCase() + userInfo.firstName.slice(1) : ''}
           <Button size='small' variant='contained'>
             {userInfo?.packageId == 1
               ? 'Basic'

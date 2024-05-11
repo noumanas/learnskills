@@ -33,6 +33,10 @@ const Dashboard = () => {
   const [referralMember, setreferralMember] = useState({})
   const [earnings, setEarnings] = useState({})
   const [Dailycomerecord, setDailycomerecord] = useState([])
+  const [todayEarning, settodayEarning] = useState([])
+  const [weeklyEarning, setweeklyEarning] = useState(0)
+  const [MonthlyEarning, setmonthlyEarning] = useState(0)
+  const [alltimeEarning, setalltimearning] = useState(0)
 
   const baseUrl = 'https://starfish-app-7c9pu.ondigitalocean.app'
   // const { id } = router.query
@@ -99,6 +103,7 @@ const Dashboard = () => {
       throw new Error('Token validation failed with status: ' + error.response.status)
     }
   }
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     const verifyTokenAndFetchUser = async () => {
@@ -113,12 +118,59 @@ const Dashboard = () => {
         const earning = await getearninginfo(token, userInfo.user?._id)
         const dailyincomedata = await getdailyincome(token, userInfo.user?._id)
         setDailycomerecord(dailyincomedata.dailyincomeData?.dailyIncome)
+        const currentDate = new Date()
+        const currentDateEntries = dailyincomedata.dailyincomeData?.dailyIncome.filter(entry => {
+          const entryDate = new Date(entry.date)
+          return entryDate.toDateString() === currentDate.toDateString()
+        })
+
+        const currentDayOfWeek = currentDate.getDay() // Get the current day of the week (0 for Sunday, 1 for Monday, etc.)
+
+        // Calculate the start and end dates of the current week
+        const firstDayOfWeek = new Date(currentDate)
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() - currentDayOfWeek) // Go back to the first day of the week (Sunday)
+        const lastDayOfWeek = new Date(currentDate)
+        lastDayOfWeek.setDate(lastDayOfWeek.getDate() + (6 - currentDayOfWeek)) // Go forward to the last day of the week (Saturday)
+
+        // Filter the data to include only entries within the current week
+        const currentWeekEntries = dailyincomedata.dailyincomeData?.dailyIncome.filter(entry => {
+          const entryDate = new Date(entry.date)
+          return entryDate >= firstDayOfWeek && entryDate <= lastDayOfWeek
+        })
+        console.log('dailyincomedata.dailyincomeData?.dailyIncome', dailyincomedata.dailyincomeData?.dailyIncome)
         setEarnings(earning.earnings)
+        const gettodayEarning = currentDateEntries
+        settodayEarning(gettodayEarning)
+        // Calculate the sum of the amount for the current week
+        const weeklyAmountSum = currentWeekEntries.reduce((sum, entry) => sum + entry.amount, 0)
+        setweeklyEarning(weeklyAmountSum)
+        const currentMonth = currentDate.getMonth()
+        // Calculate the start and end dates of the current month
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentMonth, 1)
+        const lastDayOfMonth = new Date(currentDate.getFullYear(), currentMonth + 1, 0)
+
+        // Filter the data to include only entries within the current month
+        const currentMonthEntries = dailyincomedata.dailyincomeData?.dailyIncome.filter(entry => {
+          const entryDate = new Date(entry.date)
+          return entryDate >= firstDayOfMonth && entryDate <= lastDayOfMonth
+        })
+
+        // Calculate the sum of the amount for the current month
+        const monthlyAmountSum = currentMonthEntries.reduce((sum, entry) => sum + entry.amount, 0)
+
+        // Calculate the sum of all-time earnings
+        const allTimeAmountSum = dailyincomedata.dailyincomeData?.dailyIncome.reduce(
+          (sum, entry) => sum + entry.amount,
+          0
+        )
+        setmonthlyEarning(monthlyAmountSum)
+        setalltimearning(allTimeAmountSum)
         // Here, you can set user info in global state/context
       } catch (error) {
         console.error(error) // Redirect to login if token is invalid or not found
       }
     }
+    // Get the current date and time
 
     verifyTokenAndFetchUser()
   }, [])
@@ -135,7 +187,7 @@ const Dashboard = () => {
           <Grid container spacing={6}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats={'Rs ' + Dailycomerecord[0]?.amount}
+                stats={'Rs ' + todayEarning[0]?.amount || 0}
                 icon={<Poll />}
                 color='success'
                 // trendNumber='+42%'
@@ -145,7 +197,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='0'
+                stats={'Rs ' + weeklyEarning}
                 title='Last 7 Days Earning'
                 trend='negative'
                 color='secondary'
@@ -156,7 +208,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='0'
+                stats={'Rs ' + MonthlyEarning}
                 trend='negative'
                 trendNumber='-18%'
                 title='Last 30 Days Earning'
@@ -166,7 +218,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats='0'
+                stats={'Rs ' + alltimeEarning}
                 color='warning'
                 trend='negative'
                 trendNumber='-18%'
