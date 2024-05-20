@@ -117,7 +117,7 @@ const Dashboard = () => {
         setuserInfo(userInfo.user)
         const earning = await getearninginfo(token, userInfo.user?._id)
         const dailyincomedata = await getdailyincome(token, userInfo.user?._id)
-        setDailycomerecord(dailyincomedata.dailyincomeData?.dailyIncome)
+        setDailycomerecord(dailyincomedata?.dailyincomeData?.dailyIncome ?? [])
         const currentDate = new Date()
         const currentDateEntries = dailyincomedata.dailyincomeData?.dailyIncome.filter(entry => {
           const entryDate = new Date(entry.date)
@@ -133,12 +133,11 @@ const Dashboard = () => {
         lastDayOfWeek.setDate(lastDayOfWeek.getDate() + (6 - currentDayOfWeek)) // Go forward to the last day of the week (Saturday)
 
         // Filter the data to include only entries within the current week
-        const currentWeekEntries = dailyincomedata.dailyincomeData?.dailyIncome.filter(entry => {
+        const currentWeekEntries = dailyincomedata?.dailyincomeData?.dailyIncome.filter(entry => {
           const entryDate = new Date(entry.date)
           return entryDate >= firstDayOfWeek && entryDate <= lastDayOfWeek
         })
-        console.log('dailyincomedata.dailyincomeData?.dailyIncome', dailyincomedata.dailyincomeData?.dailyIncome)
-        setEarnings(earning.earnings)
+        setEarnings(earning?.earnings)
         const gettodayEarning = currentDateEntries
         settodayEarning(gettodayEarning)
         // Calculate the sum of the amount for the current week
@@ -187,7 +186,7 @@ const Dashboard = () => {
           <Grid container spacing={6}>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats={'Rs ' + todayEarning[0]?.amount || 0}
+                stats={'Rs ' + (todayEarning[0]?.amount ?? 0)}
                 icon={<Poll />}
                 color='success'
                 // trendNumber='+42%'
@@ -197,7 +196,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats={'Rs ' + weeklyEarning}
+                stats={'Rs ' + (weeklyEarning || 0)}
                 title='Last 7 Days Earning'
                 trend='negative'
                 color='secondary'
@@ -208,7 +207,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats={'Rs ' + MonthlyEarning}
+                stats={'Rs ' + (MonthlyEarning || 0)}
                 trend='negative'
                 trendNumber='-18%'
                 title='Last 30 Days Earning'
@@ -218,7 +217,7 @@ const Dashboard = () => {
             </Grid>
             <Grid item xs={6}>
               <CardStatisticsVerticalComponent
-                stats={'Rs ' + alltimeEarning}
+                stats={'Rs ' + (alltimeEarning || 0)}
                 color='warning'
                 trend='negative'
                 trendNumber='-18%'
