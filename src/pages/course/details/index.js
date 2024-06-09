@@ -27,7 +27,8 @@ const details = () => {
     { title: 'What Is Lead ?', youtube: 'https://youtu.be/FToJygH7VCo' },
     { title: 'Temperature Of Leads', youtube: 'https://youtu.be/06ST4WD6Aew' },
     { title: 'Setup TikTok Profile Live optomize your TikTok Account', youtube: 'https://youtu.be/48jZaQtUeTo' },
-    { title: 'Post Video On TikTok To Get Sells', youtube: 'https://youtu.be/6ogjtZEw6As' }
+    { title: 'Post Video On TikTok To Get Sells', youtube: 'https://youtu.be/6ogjtZEw6As' },
+    { title: 'Complete setting for your business WhatsApp', youtube: 'https://youtu.be/R7ZtpK8yDwU' }
   ]
   return (
     <Grid container spacing={6}>
