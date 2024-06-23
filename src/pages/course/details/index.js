@@ -28,7 +28,8 @@ const details = () => {
     { title: 'Temperature Of Leads', youtube: 'https://youtu.be/06ST4WD6Aew' },
     { title: 'Setup TikTok Profile Live optomize your TikTok Account', youtube: 'https://youtu.be/48jZaQtUeTo' },
     { title: 'Post Video On TikTok To Get Sells', youtube: 'https://youtu.be/6ogjtZEw6As' },
-    { title: 'Complete setting for your business WhatsApp', youtube: 'https://youtu.be/R7ZtpK8yDwU' }
+    { title: 'Complete setting for your business WhatsApp', youtube: 'https://youtu.be/R7ZtpK8yDwU' },
+    { title: 'COMPLETE SALES PROCESS | HOW TO DEAL WITH CLIENT ON WHATSAPP?', youtube: 'https://youtu.be/6dliS7uzpKE' }
   ]
   return (
     <Grid container spacing={6}>
