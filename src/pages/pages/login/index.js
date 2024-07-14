@@ -107,6 +107,7 @@ const LoginPage = () => {
       // Redirect to the dashboard page
       router.push('/dashboard') // For Next.js, for React Router, use `history.push('/dashboard');`
     } catch (error) {
+      alert(error.response.data.error)
       SeterrorText(error.response.data.error)
     }
   }

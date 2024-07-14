@@ -2,7 +2,7 @@
 import { useState, Fragment } from 'react'
 // ** Next Imports
 import Link from 'next/link'
-
+import { toast } from 'react-hot-toast'
 // ** MUI Components
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -131,7 +131,7 @@ const RegisterPage = () => {
     } catch (error) {
       // Initialize an empty object to hold the parsed errors
       const parsedErrors = {}
-
+      alert('Please add referral code..')
       // Check if the error response is in the expected format
       if (error.response && error.response.data && typeof error.response.data.error === 'string') {
         // Assuming the error string is formatted like:

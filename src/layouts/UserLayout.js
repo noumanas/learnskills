@@ -4,7 +4,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 // ** Layout Imports
 // !Do not remove this Layout import
 import VerticalLayout from 'src/@core/layouts/VerticalLayout'
-
+import { Toaster } from 'react-hot-toast'
 // ** Navigation Imports
 import VerticalNavItems from 'src/navigation/vertical'
 
@@ -61,6 +61,7 @@ const UserLayout = ({ children }) => {
         />
       )}
     >
+      <Toaster position='bottom-center' />
       {children}
       {/* <UpgradeToProButton /> */}
     </VerticalLayout>

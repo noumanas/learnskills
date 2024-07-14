@@ -1,6 +1,6 @@
 // ** React Imports
 import { useState } from 'react'
-
+import { Toaster } from 'react-hot-toast'
 // ** MUI Imports
 import Fab from '@mui/material/Fab'
 import { styled } from '@mui/material/styles'
@@ -82,6 +82,7 @@ const VerticalLayout = props => {
               })
             }}
           >
+            <Toaster position='bottom-center' />
             {children}
           </ContentWrapper>
 
