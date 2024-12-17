@@ -20,10 +20,13 @@ import CardNavigationCenter from 'src/views/cards/CardNavigationCenter'
 import CardHorizontalRatings from 'src/views/cards/CardHorizontalRatings'
 const bloggincoursedetails = () => {
   const data = [
-    { title: 'INTRODUCTION TO ADSTERA BLOGGING BY SHOIB AKRAM', youtube: 'https://youtu.be/Ot932dn4Hcc' },
-    { title: 'HOW TO CREAT ADSTERA ACCOUNT', youtube: 'https://youtu.be/fiRQV8OkPiA' },
-    { title: 'ADSTERA BLOGGING EARNING MATHODE', youtube: 'https://youtu.be/hi5eVHqgNkY' }
+    { title: 'Adstera blogging Course Introduction', youtube: 'https://youtu.be/oPMtYbHWqg8' },
+    { title: 'Adstera + Blogging Account Creation', youtube: 'https://youtu.be/tDk4yNYuqBo' },
+    { title: 'Adstera Ads setup', youtube: 'https://youtu.be/jytPSEJBRHI' },
+    { title: 'Video Editing For Blogging', youtube: 'https://youtu.be/TG1xh3RgiUs' },
+    { title: 'How To upload video & Earn money', youtube: 'https://youtu.be/oMSOcMJi3IU' }
   ]
+
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} sx={{ paddingBottom: 4 }}>

@@ -43,13 +43,13 @@ const CardImgTop = () => {
       <Card sx={{ marginTop: '10px' }}>
         <CardMedia
           sx={{ height: '14.5625rem' }}
-          image='/images/cards/772c245c-f33b-47e2-81de-bc9ea7af03cb.jpeg'
+          image='/images/cards/adsterracoverimage.jpeg'
           onClick={handleOpenModal}
         />
         <Link href='/course/bloggin-course-details'>
           <CardContent>
             <Typography variant='h6' sx={{ marginBottom: 2 }} onClick={handleOpenModal}>
-              ADSTERA BLOGGING BY SHOIB AKRAM
+              ADSTERA BLOGGING
             </Typography>
             <Typography variant='body2'>
               Sure, here's a description for an introduction to Adsterra blogging by Shoib Akram: Introduction to
