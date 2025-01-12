@@ -16,13 +16,13 @@ const data = [
     discription:
       'Revolutionize your operations with Implementation services that seamlessly integrate cutting-edge technologies into your existing setup. Transform your systems effortlessly for a future-ready infrastructure.',
     price: '2550'
-  },
-  {
-    title: 'Premium',
-    discription:
-      'Ensure the uninterrupted flow of your operations with our Managed Services. Enjoy 24/7 support that actively monitors, manages, and troubleshoots issues, providing you with the reliability and stability your business demands.',
-    price: '5560'
   }
+  // {
+  //   title: 'Premium',
+  //   discription:
+  //     'Ensure the uninterrupted flow of your operations with our Managed Services. Enjoy 24/7 support that actively monitors, manages, and troubleshoots issues, providing you with the reliability and stability your business demands.',
+  //   price: '5560'
+  // }
 ]
 
 export function ComperehansiveOffers() {
